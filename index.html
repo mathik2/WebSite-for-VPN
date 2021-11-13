@@ -44,22 +44,30 @@
             display: inline-flex;
             justify-content: space-between;
             margin-left: 30%;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
         }
 
         #wish {
             padding: 30px;
 
         }
-
+        #close{
+            position: absolute;
+            right: 0;
+            font-size:30px;
+           border:none;
+           
+          }
         #hex {
             position: absolute;
             z-index: 5;
             bottom: 0;
             right: 0;
-            height: 6rem;
+            height: 8rem;
             margin: 2%;
             position: fixed;
-            background: rgb(228, 209, 36);
+            background: rgb(254, 193, 15);
             font-family: bold;
             font-size: 2rem;
         }
@@ -386,6 +394,7 @@
                 padding: 2%
             }
         }
+       
     </style>
 </head>
 
@@ -394,7 +403,7 @@
     <div id="greeting">
         <p id="wish"></p>
         <button onclick="document.getElementById('greeting').remove()"
-            style="padding:2rem;background:rgb(34, 238, 34);border:none">X</button>
+            id="close">X</button>
     </div>
     <!-- background color changer -->
     <div><input id="hex" onkeyup="ChangeColor()"></div>
