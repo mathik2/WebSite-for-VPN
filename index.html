@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document </title>
+
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- for fonts -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        #greeting {
+            position: absolute;
+            z-index: 5;
+            background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+            width: 20cm;
+            height: 3cm;
+            font-size: 5rem;
+            display: inline-flex;
+            justify-content: space-between;
+            margin-left: 30%;
+        }
+
+        #wish {
+            padding: 30px;
+
+        }
+
+        #hex {
+            position: absolute;
+            z-index: 5;
+            bottom: 0;
+            right: 0;
+            height: 6rem;
+            margin: 2%;
+            position: fixed;
+            background: rgb(228, 209, 36);
+            font-family: bold;
+            font-size: 2rem;
+        }
+
+        #icon {
+
+            height: 6rem;
+            width: 6rem;
+        }
+
+        #icon:hover {
+            background: rgb(254, 193, 15);
+
+        }
+
+        #navbar>ul>li {
+            list-style: none;
+            display: inline-block;
+
+        }
+
+        #navbar>ul>li>a {
+            text-decoration: none;
+            font-size: 3rem;
+            padding: 25px;
+            color: black;
+
+        }
+
+        #navbar>ul>li>a:hover {
+            background: black;
+            color: rgb(228, 209, 36);
+        }
+
+        #navbar {
+            position: fixed;
+            z-index: 2;
+            width: 100%;
+            background-color: rgb(254, 193, 15);
+
+            padding: 20px;
+        }
+
+
+        .jumbotron {
+            height: 90vh;
+            position: relative;
+            z-index: -1;
+
+        }
+
+        .jumbotron>h1 {
+            color: white;
+            padding-top: 4%
+        }
+
+        .jumbotron>p {
+            color: white;
+            float: right;
+            margin-right: 4%;
+            margin-top: 10%;
+            font-size: 4rem;
+            animation-name: example;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes example {
+            0% {
+                color: rgb(241, 28, 28);
+            }
+
+            25% {
+                color: rgb(238, 238, 34);
+            }
+
+            50% {
+                color: rgb(38, 255, 0);
+            }
+
+            100% {
+                color: rgb(16, 205, 238);
+            }
+        }
+
+        #network {
+
+            position: absolute;
+            z-index: -1;
+            float: left;
+            width: 80vh;
+            height: 80vh;
+        }
+
+        #owl {
+            width: 80vh;
+            height: 80vh;
+            float: right;
+
+            margin-right: 1%;
+        }
+
+        #about {
+            display: inline-flex;
+            padding: 6%;
+        }
+
+        #about>div>p {
+            font-size: 3rem;
+        }
+
+        #features,
+        #contact,
+        form,
+        #testimonial {
+            width: 100%;
+        }
+
+        #features {
+            font-size: 3rem;
+        }
+
+        .featuresBox:hover {
+            transform: scale(1.2);
+        }
+
+        .col-sm-4 {
+            width: 15%;
+            background-color: rgb(128, 115, 0);
+            margin: 1%;
+        }
+
+        #review {
+            width: 100%;
+            height: 40vh;
+            text-align: center;
+            margin-top: 15%;
+            padding: 5%;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .glyphicon-star {
+            color: yellow;
+            font-size: 3rem;
+        }
+
+        .carousel-caption>h3 {
+            color: green;
+            font-weight: bold;
+        }
+
+        #testimonial {
+            background-image: linear-gradient(-225deg, #7DE2FC 0%, #B9B6E5 100%);
+        }
+
+        #download>a>img {
+            height: 6rem;
+            margin-bottom: 2%;
+            margin-left: 45%;
+        }
+
+        #contact {
+            height: 80vh;
+            margin-top: auto;
+            padding: 3%;
+        }
+
+        #contactIcons {
+            justify-content: space-between;
+            display: flex;
+        }
+
+        .fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 80px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50%;
+            margin: 3%;
+        }
+
+        .fa:hover {
+
+            transform: scale(1.2);
+            text-decoration: none;
+            color: white;
+        }
+
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+
+        .fa-google {
+            background: #dd4b39;
+            color: white;
+        }
+
+        .fa-linkedin {
+            background: #007bb5;
+            color: white;
+        }
+
+        .fa-youtube {
+            background: #bb0000;
+            color: white;
+        }
+
+        .fa-instagram {
+            background: #125688;
+            color: white;
+        }
+
+        #form {
+            width: 50%;
+            text-align: center;
+        }
+
+        label {
+            font-size: 3rem;
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        .footer {
+            font-size: 2vh;
+            color: yellow;
+            padding: 4%
+        }
+
+        #section {
+            color: white
+        }
+
+
+
+        @media (max-width: 768px) {
+            #icon {
+                height: 3rem;
+                width: 3rem;
+            }
+
+            #navbar>ul>li>a {
+                font-size: 1.5rem;
+                padding: 8px;
+                color: black;
+            }
+
+            #navbar {
+                padding: 18px;
+            }
+
+            .jumbotron>h1 {
+                color: white;
+                padding-top: 8%
+            }
+
+            .jumbotron>p {
+                font-size: 2rem;
+            }
+
+            #about {
+                display: block;
+                padding: 6%;
+            }
+
+            #about>div>p {
+                font-size: 1.5rem;
+            }
+
+            #review {
+                margin-top: 10%;
+                padding: 5%;
+                font-size: 2rem;
+                font-weight: bold;
+            }
+
+            #form {
+                width: 100%;
+                margin-bottom: 5%;
+                text-align: center;
+            }
+
+            .footer {
+                font-size: 2rem;
+                color: yellow;
+                padding: 2%
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- greeting section -->
+    <div id="greeting">
+        <p id="wish"></p>
+        <button onclick="document.getElementById('greeting').remove()"
+            style="padding:2rem;background:rgb(34, 238, 34);border:none">X</button>
+    </div>
+    <!-- background color changer -->
+    <div><input id="hex" onkeyup="ChangeColor()"></div>
+    <!-- navbar fixed -->
+    <nav id="navbar" class="nav flex-row">
+        <ul class="nav-list">
+            <li>
+                <a href="#"><img src="/images/earlybirds-brands.svg" id="icon"></a>
+            </li>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+            <li>
+                <a href="#about">About Us</a>
+            </li>
+            <li>
+                <a href="#features">Features</a>
+            </li>
+            <li>
+                <a href="#testimonial">Testimonials</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- jumbotron heading -->
+    <div class="jumbotron bg-dark text-center">
+
+        <h1>Welcome To VPN Owl <img
+                src="https://static-s.aa-cdn.net/img/ios/1221368520/b083b9e417086171d83b1b4531e1dc70?v=1"
+                style="height:5rem;width:5rem;"></h1>
+
+        <p>Trusted by 80+ million users worldwide<br>
+
+            Use our VPN to access your favorite sites, apps and contents<br> from around the Globe Private and Secure!
+        </p>
+
+        <img src="/images/undraw_connected_world_wuay.svg" id="network" class="img-responsive">
+
+    </div>
+    <!-- about section -->
+    <section class="about-us " id="about">
+        <div>
+            <h1 class="text-center bg-dark text-light p-3"> About Us</h1>
+            <h1 class="text-center text-b">VPN LLC (open-vpn.org)
+            </h1>
+
+
+            <p>VPN Owl ensures your online activity is for your eyes only! It protects all your crucial data and comes
+                with a private browser + ad-block.<br>Use VPN Owl to
+                feel confident that your internet activity (home, public wifi, cellular) is always secure, private, and
+                anonymous. VPN protects your passwords, credit card, and bank accounts from hackers. Plus, gives you
+                unrestricted access to global online content. Along with that, it lets you unblock popular apps like
+                WhatsApp, TikTok, WeChat, Telegram, Roblox and lots more.</p>
+            </p>
+        </div>
+        <img src="/images/about.svg" alt="about us" class="img-responsive" style="float: right;width:80vh;height:50vh">
+    </section>
+
+    <hr>
+    <!-- features section -->
+    <div class="container " id="features">
+        <h1 class=" border-bottom text-center bg-dark p-4 text-light">Features</h1>
+
+        <div class="row row-cols-1 row-cols-lg-3  ">
+
+            <div class="col mb-5">
+                <div class="h-100  text-white bg-dark featuresBox">
+                    <div class="d-flex flex-column h-100 p-5 pb-3  ">
+                        <h2 class="pt-5  display-6 fw-bold">Free unlimited VPN supported by in-app ads</h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSpxWDPHDXptu5W2GUZ3wKmR5fwZeovmDS8w&usqp=CAU"
+                                    alt="vpn" width="50" height="50" class="rounded-circle border border-white">
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-5">
+                <div class="h-100  text-white bg-warning featuresBox">
+                    <div class="d-flex flex-column h-100 p-5 pb-3  ">
+                        <h2 class="pt-5  display-6 fw-bold text-dark"> Automatic fastest connection</h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkXdyHP_nQ427SdwLPCwZeGS817H7c1AL5PQ&usqp=CAU"
+                                    alt="connection" width="50" height="50" class="rounded-circle border border-white">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-5">
+                <div class="h-100  text-white bg-dark featuresBox">
+                    <div class="d-flex flex-column h-100 p-5 pb-3  ">
+                        <h2 class="pt-5  display-6 fw-bold">1000s of global virtual locations to choose from</h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMyDx0jgIXw8Zj0yHAqFgVBYNvvec2Ks59cw&usqp=CAU"
+                                    alt="virtual connection" width="50" height="50" class="rounded-circle border border-white">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="h-100  text-white bg-warning featuresBox">
+                    <div class="d-flex flex-column h-100 p-5 pb-3  ">
+                        <h2 class="pt-5  display-6 fw-bold text-dark">One-tap VPN connection: superior encryption,
+                            top-notch security</h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO8hkCEyWq0EzeG1sgPVUsOlXMzbsvIA04Ig&usqp=CAU"
+                                    alt="encryption" width="50" height="50" class="rounded-circle border border-white">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="h-100  text-white bg-dark featuresBox">
+                    <div class="d-flex flex-column h-100 p-5 pb-3  ">
+                        <h2 class="pt-5  display-6 fw-bold"> Convenient private browser</h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPQX489QLd1KhK3fwVoOLNeetdVAI3GRlCzA&usqp=CAU"
+                                    alt="browser" width="50" height="50" class="rounded-circle border border-white">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="h-100  text-white bg-warning featuresBox">
+                    <div class="d-flex flex-column h-100 p-5 pb-3  ">
+                        <h2 class="pt-5  display-6 fw-bold text-dark">No user data logs</h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVZBFRcicUL3KpKItEhxtx8nuIJOhrfUh-Lg&usqp=CAU"
+                                    alt="data logs" width="50" height="50" class="rounded-circle border border-white">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <!-- testimonials -->
+    <div class="container" id="testimonial">
+        <h1 class="text-center bg-dark p-5 text-light">Here is Our Customer Review</h1>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <p id="review">This is an amazing app to use in school to get around blocked sites just watch 10
+                        (skippable)ads to get 10 hours of vpn time. This is an awesome app thanks!!</p>
+
+                    <div class="carousel-caption">
+                        <h3>Mr. Bread </h3>
+                        <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                    </div>
+                </div>
+
+                <div class="item">
+
+                    <p id="review">This is the best VPN I have ever seen so far on this app. They deserve more than 5
+                        star 💯❤</p>
+                    <div class="carousel-caption">
+                        <h3> Ibrahim Kassim</h3>
+                        <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <p id="review">It work thanks . I have try others in my country and most of them dont work . Speed
+                        is also good.</p>
+                    <div class="carousel-caption">
+                        <h3>Blue Ice</h3>
+                        <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <hr>
+    <section class="section" id="download">
+        <h1 class="text-center">To Download Our App</h1>
+        <a href="https://play.google.com/store/apps/details?id=openvpn.vpn" target="_blank"> <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/640px-Google_Play_Store_badge_EN.svg.png"></a>
+
+    </section>
+    <hr>
+    <!-- contact us -->
+    <section class="container bg-dark" id="contact">
+        <h1 class="text-center text-light">Contact Us</h1>
+        <hr>
+        <div id="contactIcons"><a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+            <a href="#" class="fa fa-youtube"></a>
+            <a href="#" class="fa fa-instagram"></a>
+        </div>
+        <br><br>
+        <div class="container text-center bg-warning" id="form">
+
+            <form>
+                <label for="name"> Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name..">
+                <br> <br>
+
+
+                <label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something.."></textarea>
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </section>
+
+    <br>
+    <!-- footer section -->
+    <div class="container-fluid footer bg-dark">
+        <footer class="py-5">
+            <div class="row">
+                <div class="col-2">
+                    <h3 id="section">Section</h3>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-2">
+                    <h3 id="section">Section</h3>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-2">
+                    <h3 id="section">Section</h3>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-4 offset-1">
+                    <form>
+                        <h3>Subscribe to our newsletter</h3>
+                        <p>Monthly digest of whats new and exciting from us.</p>
+                        <div class="d-flex w-100 gap-2">
+                            <label for="newsletter1" class="visually-hidden">Email address</label>
+                            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                            <button class="btn btn-warning ">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between py-4 my-4 border-top">
+                <p>&copy; 2021 <strong> VPN OWL </strong>Company, Inc. All rights reserved.</p>
+                <ul class="list-unstyled d-flex">
+
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                </ul>
+
+            </div>
+        </footer>
+    </div>
+    <script>
+
+        var d = new Date().getHours()
+
+        window.onload = function () {
+
+            if (d >= 5 & d < 12) {
+                document.getElementById('wish').innerText = "Good morning :) Guest!!"
+            } else if (d >= 12 & d < 15) {
+                document.getElementById('wish').innerText = "Good afternoon :) Guest!!"
+            }
+            else if (d >= 15 & d < 18) {
+                document.getElementById('wish').innerText = "Good evening :) Guest!!"
+            }
+            else if (d >= 18 & d < 24) {
+                document.getElementById('wish').innerText = "Good night :) Guest!!"
+            }
+        }
+        setTimeout(function () { document.getElementById('greeting').remove() }, 10000);
+
+        function ChangeColor() {
+            let color = document.getElementById('hex')
+            document.body.style.backgroundColor = color.value
+        }
+    </script>
+</body>
+
+</html>
